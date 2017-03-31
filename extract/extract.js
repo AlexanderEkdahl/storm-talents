@@ -179,7 +179,7 @@ documents.forEach((document) => {
         const textPath = getValue(node, 'SimpleDisplayText');
 
         icons[buttonId] = {
-            icon: icon.replace('Assets\\Textures\\', ''),
+            icon: icon.replace('Assets\\Textures\\', '').toLowerCase(),
             textPath: textPath,
         };
     });
