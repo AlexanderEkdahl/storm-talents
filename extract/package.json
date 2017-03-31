@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "jsen": "^0.6.4",
+    "libxmljs": "^0.18.4",
+    "storm-extract": "^1.0.3"
+  }
+}
