@@ -5,11 +5,6 @@ import { IHero, TIERS } from "../interfaces";
 import HeroSelect from "./HeroSelect";
 import Tree from "./Tree";
 
-export interface IApplicationProps {
-    compiler: string;
-    framework: string;
-}
-
 export interface IApplicationState {
     talentSelections: number[];
     hero: IHero | null;
@@ -21,10 +16,10 @@ export interface IApplicationState {
 const initialTalentSelections = TIERS.map(() => -1);
 
 const getHero = async (heroId: string): Promise<IHero> => {
-    return await fetchJson<IHero>(`/data/${heroId}.json`);
+    return await fetchJson<IHero>(`/heroes/${heroId}.json`);
 };
 
-export default class Application extends Component<IApplicationProps, IApplicationState> {
+export default class Application extends Component<{}, IApplicationState> {
     public state: IApplicationState = {
         height: window.innerHeight,
         hero: null,

@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "flatten-array": "^1.0.0",
     "jsen": "^0.6.4",
     "libxmljs": "^0.18.4",
-    "storm-extract": "^1.0.3"
+    "storm-extract": "^1.0.3",
+    "tmp": "^0.0.31"
   }
 }

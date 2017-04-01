@@ -1,259 +1,259 @@
 /* tslint:disable */
 export default [
   {
-    "name": "Abathur",
-    "id": "Abathur"
+    "id": "Abathur",
+    "name": "Abathur"
   },
   {
-    "name": "Alarak",
-    "id": "Alarak"
+    "id": "Alarak",
+    "name": "Alarak"
   },
   {
-    "name": "Anub'arak",
-    "id": "Anubarak"
+    "id": "Anubarak",
+    "name": "Anub'arak"
   },
   {
-    "name": "Artanis",
-    "id": "Artanis"
+    "id": "Artanis",
+    "name": "Artanis"
   },
   {
-    "name": "Arthas",
-    "id": "Arthas"
+    "id": "Arthas",
+    "name": "Arthas"
   },
   {
-    "name": "Auriel",
-    "id": "Auriel"
+    "id": "Auriel",
+    "name": "Auriel"
   },
   {
-    "name": "Azmodan",
-    "id": "Azmodan"
+    "id": "Azmodan",
+    "name": "Azmodan"
   },
   {
-    "name": "Brightwing",
-    "id": "FaerieDragon"
+    "id": "FaerieDragon",
+    "name": "Brightwing"
   },
   {
-    "name": "Butcher",
-    "id": "Butcher"
+    "id": "Butcher",
+    "name": "Butcher"
   },
   {
-    "name": "Chen",
-    "id": "Chen"
+    "id": "Chen",
+    "name": "Chen"
   },
   {
-    "name": "Cho",
-    "id": "Cho"
+    "id": "Cho",
+    "name": "Cho"
   },
   {
-    "name": "Chromie",
-    "id": "Chromie"
+    "id": "Chromie",
+    "name": "Chromie"
   },
   {
-    "name": "Dehaka",
-    "id": "Dehaka"
+    "id": "Dehaka",
+    "name": "Dehaka"
   },
   {
-    "name": "Diablo",
-    "id": "Diablo"
+    "id": "Diablo",
+    "name": "Diablo"
   },
   {
-    "name": "E.T.C.",
-    "id": "L90ETC"
+    "id": "L90ETC",
+    "name": "E.T.C."
   },
   {
-    "name": "Falstad",
-    "id": "Falstad"
+    "id": "Falstad",
+    "name": "Falstad"
   },
   {
-    "name": "Gall",
-    "id": "Gall"
+    "id": "Gall",
+    "name": "Gall"
   },
   {
-    "name": "Gazlowe",
-    "id": "Tinker"
+    "id": "Tinker",
+    "name": "Gazlowe"
   },
   {
-    "name": "Greymane",
-    "id": "Greymane"
+    "id": "Greymane",
+    "name": "Greymane"
   },
   {
-    "name": "Gul'dan",
-    "id": "Guldan"
+    "id": "Guldan",
+    "name": "Gul'dan"
   },
   {
-    "name": "Illidan",
-    "id": "Illidan"
+    "id": "Illidan",
+    "name": "Illidan"
   },
   {
-    "name": "Jaina",
-    "id": "Jaina"
+    "id": "Jaina",
+    "name": "Jaina"
   },
   {
-    "name": "Johanna",
-    "id": "Crusader"
+    "id": "Crusader",
+    "name": "Johanna"
   },
   {
-    "name": "Kael'thas",
-    "id": "Kaelthas"
+    "id": "Kaelthas",
+    "name": "Kael'thas"
   },
   {
-    "name": "Kerrigan",
-    "id": "Kerrigan"
+    "id": "Kerrigan",
+    "name": "Kerrigan"
   },
   {
-    "name": "Kharazim",
-    "id": "Monk"
+    "id": "Monk",
+    "name": "Kharazim"
   },
   {
-    "name": "Leoric",
-    "id": "Leoric"
+    "id": "Leoric",
+    "name": "Leoric"
   },
   {
-    "name": "Li Li",
-    "id": "LiLi"
+    "id": "LiLi",
+    "name": "Li Li"
   },
   {
-    "name": "Li-Ming",
-    "id": "Wizard"
+    "id": "Wizard",
+    "name": "Li-Ming"
   },
   {
-    "name": "The Lost Vikings",
-    "id": "LostVikings"
+    "id": "LostVikings",
+    "name": "The Lost Vikings"
   },
   {
-    "name": "Lúcio",
-    "id": "Lucio"
+    "id": "Lucio",
+    "name": "Lúcio"
   },
   {
-    "name": "Lt. Morales",
-    "id": "Medic"
+    "id": "Medic",
+    "name": "Lt. Morales"
   },
   {
-    "name": "Lunara",
-    "id": "Dryad"
+    "id": "Dryad",
+    "name": "Lunara"
   },
   {
-    "name": "Malfurion",
-    "id": "Malfurion"
+    "id": "Malfurion",
+    "name": "Malfurion"
   },
   {
-    "name": "Medivh",
-    "id": "Medivh"
+    "id": "Medivh",
+    "name": "Medivh"
   },
   {
-    "name": "Muradin",
-    "id": "Muradin"
+    "id": "Muradin",
+    "name": "Muradin"
   },
   {
-    "name": "Murky",
-    "id": "Murky"
+    "id": "Murky",
+    "name": "Murky"
   },
   {
-    "name": "Nazeebo",
-    "id": "WitchDoctor"
+    "id": "WitchDoctor",
+    "name": "Nazeebo"
   },
   {
-    "name": "Nova",
-    "id": "Nova"
+    "id": "Nova",
+    "name": "Nova"
   },
   {
-    "name": "Probius",
-    "id": "Probius"
+    "id": "Probius",
+    "name": "Probius"
   },
   {
-    "name": "Ragnaros",
-    "id": "Ragnaros"
+    "id": "Ragnaros",
+    "name": "Ragnaros"
   },
   {
-    "name": "Raynor",
-    "id": "Raynor"
+    "id": "Raynor",
+    "name": "Raynor"
   },
   {
-    "name": "Rehgar",
-    "id": "Rehgar"
+    "id": "Rehgar",
+    "name": "Rehgar"
   },
   {
-    "name": "Rexxar",
-    "id": "Rexxar"
+    "id": "Rexxar",
+    "name": "Rexxar"
   },
   {
-    "name": "Samuro",
-    "id": "Samuro"
+    "id": "Samuro",
+    "name": "Samuro"
   },
   {
-    "name": "Sgt. Hammer",
-    "id": "SgtHammer"
+    "id": "SgtHammer",
+    "name": "Sgt. Hammer"
   },
   {
-    "name": "Sonya",
-    "id": "Barbarian"
+    "id": "Barbarian",
+    "name": "Sonya"
   },
   {
-    "name": "Stitches",
-    "id": "Stitches"
+    "id": "Stitches",
+    "name": "Stitches"
   },
   {
-    "name": "Sylvanas",
-    "id": "Sylvanas"
+    "id": "Sylvanas",
+    "name": "Sylvanas"
   },
   {
-    "name": "Tassadar",
-    "id": "Tassadar"
+    "id": "Tassadar",
+    "name": "Tassadar"
   },
   {
-    "name": "Thrall",
-    "id": "Thrall"
+    "id": "Thrall",
+    "name": "Thrall"
   },
   {
-    "name": "Tracer",
-    "id": "Tracer"
+    "id": "Tracer",
+    "name": "Tracer"
   },
   {
-    "name": "Tychus",
-    "id": "Tychus"
+    "id": "Tychus",
+    "name": "Tychus"
   },
   {
-    "name": "Tyrael",
-    "id": "Tyrael"
+    "id": "Tyrael",
+    "name": "Tyrael"
   },
   {
-    "name": "Tyrande",
-    "id": "Tyrande"
+    "id": "Tyrande",
+    "name": "Tyrande"
   },
   {
-    "name": "Uther",
-    "id": "Uther"
+    "id": "Uther",
+    "name": "Uther"
   },
   {
-    "name": "Valeera",
-    "id": "Valeera"
+    "id": "Valeera",
+    "name": "Valeera"
   },
   {
-    "name": "Valla",
-    "id": "DemonHunter"
+    "id": "DemonHunter",
+    "name": "Valla"
   },
   {
-    "name": "Varian",
-    "id": "Varian"
+    "id": "Varian",
+    "name": "Varian"
   },
   {
-    "name": "Xul",
-    "id": "Necromancer"
+    "id": "Necromancer",
+    "name": "Xul"
   },
   {
-    "name": "Zagara",
-    "id": "Zagara"
+    "id": "Zagara",
+    "name": "Zagara"
   },
   {
-    "name": "Zarya",
-    "id": "Zarya"
+    "id": "Zarya",
+    "name": "Zarya"
   },
   {
-    "name": "Zeratul",
-    "id": "Zeratul"
+    "id": "Zeratul",
+    "name": "Zeratul"
   },
   {
-    "name": "Zul'jin",
-    "id": "Zuljin"
+    "id": "Zuljin",
+    "name": "Zul'jin"
   }
 ]

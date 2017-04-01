@@ -2,7 +2,10 @@ const storm = require('storm-extract');
 const libxml = require("libxmljs");
 const path = require("path");
 const fs = require("fs");
-const jsen = require("jsen")
+const jsen = require("jsen");
+const flattenArray = require("flatten-array");
+const spawn = require( 'child_process' ).spawnSync;
+const tmp = require('tmp');
 
 const TIERS = ["1", "2", "3", "4", "5", "6", "7"];
 
@@ -76,11 +79,15 @@ const validator = jsen({
     "type": "object"
 });
 
+const tmpDir = tmp.dirSync().name;
+
 const files = storm
     .listFiles('/Applications/Heroes of the Storm/')
     .filter((file) => file.endsWith(".xml") || file.endsWith("GameStrings.txt"));
 
-const readFile = (file) => fs.readFileSync(path.join(__dirname, 'tmp', file), { encoding: "utf8" })
+storm.extractFiles('/Applications/Heroes of the Storm/', tmpDir, files);
+
+const readFile = (file) => fs.readFileSync(path.join(tmpDir, file), { encoding: "utf8" })
 
 const heroes = {};
 libxml.parseXmlString(readFile('mods/heroesdata.stormmod/base.stormdata/GameData/ConfigData.xml'))
@@ -217,7 +224,34 @@ const output = Object.keys(heroes).map((id) => {
     return hero;
 });
 
-fs.writeFileSync('heroes.json', JSON.stringify(output, undefined, '\t'), { encoding: "utf8" })
+const outputList = output.map((hero) => {
+    return { id: hero.id, name: hero.name };
+})
+
+// fs.writeFileSync('heroes.json', JSON.stringify(output, undefined, '\t'), { encoding: "utf8" });
+fs.writeFileSync('../src/heroes.ts', `/* tslint:disable */\nexport default ${JSON.stringify(outputList, undefined, '  ')}`, { encoding: "utf8" })
+
+const dist = path.join(__dirname, '..', 'dist');
+
+spawn('mkdir', [path.join(dist, 'heroes')]);
+spawn('mkdir', [path.join(dist, 'icons')]);
+
+output.forEach((hero) => {
+    const destPath = path.join(dist, 'heroes', `${hero.id}.json`)
+    fs.writeFileSync(destPath, JSON.stringify(hero), { encoding: "utf8" });
+});
+
+const images = flattenArray(output.map((hero) => hero.talents.map((talents) => talents.map((x) => x.icon))));
+
+storm.extractFiles('/Applications/Heroes of the Storm/', tmpDir,
+    images.map((image) => `mods/heroes.stormmod/base.stormassets/Assets/Textures/${image}`));
+
+images.forEach((image) => {
+    const fromPath = path.join(tmpDir, 'mods/heroes.stormmod/base.stormassets/Assets/Textures', image);
+    const destPath = path.join(dist, 'icons', `${image}.jpg`);
+
+    spawn('convert', [fromPath, '-quality', '85%', destPath]);
+});
 
 function getValue(node, subnodeName, defaultValue = undefined) {
     if (!node)

@@ -77,7 +77,7 @@ export default class Talent extends Component<ITalentProps, {}> {
             <g onClick={onClick} style={{ cursor: "pointer" }}>
                 {glow}
                 <image
-                    xlinkHref={`/icons/${talent.icon}.png`}
+                    xlinkHref={`/icons/${talent.icon}.jpg`}
                     x={x}
                     y={y}
                     height={iconSize}
