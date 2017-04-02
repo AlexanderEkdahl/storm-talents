@@ -9,11 +9,13 @@ export interface ITalentProps {
     selected: boolean;
     j: number;
     talent: ITalent;
+    onMouseEnter: () => void;
+    onMouseLeave: () => void;
 }
 
 export default class Talent extends Component<ITalentProps, {}> {
     public render() {
-        const { x, y, iconSize, talent, onClick, selected, j } = this.props;
+        const { x, y, iconSize, talent, onClick, selected, j, onMouseEnter, onMouseLeave } = this.props;
 
         let sign;
         let glow;
@@ -74,7 +76,7 @@ export default class Talent extends Component<ITalentProps, {}> {
         }
 
         return (
-            <g onClick={onClick} style={{ cursor: "pointer" }}>
+            <g onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick} style={{ cursor: "pointer" }}>
                 {glow}
                 <image
                     xlinkHref={`/icons/${talent.icon}.jpg`}

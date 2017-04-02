@@ -13,10 +13,13 @@ export interface ITalentRowProps {
     selections: number;
     height: number;
     tierOffset: number;
+    onMouseEnter: (i: number, j: number) => void;
+    onMouseLeave: () => void;
 }
 
 export default (props: ITalentRowProps) => {
-    const { i, scaleX, scaleY, iconSize, onClick, selections, talents, height, tierOffset } = props;
+    const { i, scaleX, scaleY, iconSize, onClick, selections, talents,
+        height, tierOffset, onMouseEnter, onMouseLeave } = props;
 
     const row = talents.map((talent, j) => (
         <Talent
@@ -24,6 +27,8 @@ export default (props: ITalentRowProps) => {
             y={scaleY(i, j)}
             iconSize={iconSize}
             onClick={() => onClick(i, j)}
+            onMouseEnter={() => onMouseEnter(i, j)}
+            onMouseLeave={onMouseLeave}
             selected={selections === j}
             j={j}
             talent={talent}

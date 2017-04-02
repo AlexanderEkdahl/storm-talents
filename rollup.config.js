@@ -28,6 +28,7 @@ if (process.env.PRODUCTION) {
 }
 
 if (process.env.DEV) {
+  console.log("http://localhost:8080/")
   configuration.plugins.push(
     serve({
       contentBase: "dist",
