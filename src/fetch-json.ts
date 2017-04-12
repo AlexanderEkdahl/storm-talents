@@ -1,4 +1,4 @@
-export default <T>(url: string): Promise<T> => {
+export const fetchJson = (url: string): Promise<any> => {
     return new Promise((resolve, reject) => {
         const req = new XMLHttpRequest();
         req.open("GET", url);
