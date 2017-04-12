@@ -8,8 +8,6 @@ import Tree from "./Tree";
 export interface IApplicationState {
     talentSelections: number[];
     hero: IHero | null;
-    width: number;
-    height: number;
     lastSelectTier: number;
 }
 
@@ -21,11 +19,9 @@ const getHero = async (heroId: string): Promise<IHero> => {
 
 export default class Application extends Component<{}, IApplicationState> {
     public state: IApplicationState = {
-        height: window.innerHeight,
         hero: null,
         lastSelectTier: -1,
         talentSelections: initialTalentSelections,
-        width: window.innerWidth,
     };
     private rqf: number | null;
 
@@ -48,12 +44,12 @@ export default class Application extends Component<{}, IApplicationState> {
     public render() {
         const { hero, talentSelections } = this.state;
 
-        const width = document.documentElement.clientWidth;
-        const height = document.documentElement.clientHeight;
-
         if (hero == null) {
             return <span />;
         }
+
+        const width = document.documentElement.clientWidth;
+        const height = document.documentElement.clientHeight;
 
         return (
             <div>
@@ -74,10 +70,7 @@ export default class Application extends Component<{}, IApplicationState> {
         if (this.rqf) { return; }
         this.rqf = window.requestAnimationFrame(() => {
             this.rqf = null;
-            this.setState({
-                height: window.innerHeight,
-                width: window.innerWidth,
-            });
+            this.forceUpdate();
         });
     }
 
