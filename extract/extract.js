@@ -80,6 +80,7 @@ const validator = jsen({
 });
 
 const tmpDir = tmp.dirSync().name;
+console.log(`Extracting files to: ${tmpDir}`)
 
 const files = storm
     .listFiles('/Applications/Heroes of the Storm/')

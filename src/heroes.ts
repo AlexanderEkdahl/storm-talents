@@ -37,6 +37,10 @@ export default [
     "name": "Butcher"
   },
   {
+    "id": "Amazon",
+    "name": "Cassia"
+  },
+  {
     "id": "Chen",
     "name": "Chen"
   },
