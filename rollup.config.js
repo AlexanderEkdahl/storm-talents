@@ -1,8 +1,7 @@
-import typescript from "rollup-plugin-typescript";
+import closure from 'rollup-plugin-closure-compiler-js';
 import nodeResolve from "rollup-plugin-node-resolve";
-import uglify from "rollup-plugin-uglify";
 import serve from "rollup-plugin-serve";
-import { minify } from 'uglify-js';
+import typescript from "rollup-plugin-typescript";
 
 const configuration = {
   entry: "src/index.tsx",
@@ -18,13 +17,9 @@ const configuration = {
 };
 
 if (process.env.PRODUCTION) {
+  configuration.sourceMap = false;
   configuration.plugins.push(
-    uglify({
-      mangle: {
-        toplevel: true,
-      },
-      minify
-    })
+    closure()
   );
 }
 
