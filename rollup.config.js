@@ -2,6 +2,7 @@ import typescript from "rollup-plugin-typescript";
 import nodeResolve from "rollup-plugin-node-resolve";
 import uglify from "rollup-plugin-uglify";
 import serve from "rollup-plugin-serve";
+import { minify } from 'uglify-js';
 
 const configuration = {
   entry: "src/index.tsx",
@@ -22,14 +23,15 @@ if (process.env.PRODUCTION) {
       mangle: {
         toplevel: true,
       },
+      minify
     })
   );
 }
 
 if (process.env.DEV) {
-  console.log("http://localhost:8080/")
   configuration.plugins.push(
     serve({
+      verbose: true,
       contentBase: "dist",
       historyApiFallback: false,
       port: 8080

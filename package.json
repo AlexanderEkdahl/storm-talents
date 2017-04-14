@@ -8,18 +8,19 @@
     "lint": "tslint --project tsconfig.json --fix"
   },
   "dependencies": {
-    "preact": "^7.2.1"
+    "preact": "^8.1.0"
   },
   "devDependencies": {
     "rollup": "^0.41.6",
     "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-serve": "^0.1.0",
+    "rollup-plugin-serve": "^0.3.0",
     "rollup-plugin-typescript": "^0.8.1",
     "rollup-plugin-uglify": "^1.0.1",
     "rollup-watch": "^3.2.2",
     "tslib": "^1.6.0",
     "tslint": "^5.1.0",
     "tslint-react": "^2.5.0",
-    "typescript": "^2.2.2"
+    "typescript": "^2.2.2",
+    "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony"
   }
 }
