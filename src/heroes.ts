@@ -77,6 +77,10 @@ export default [
     "name": "Gazlowe"
   },
   {
+    "id": "Genji",
+    "name": "Genji"
+  },
+  {
     "id": "Greymane",
     "name": "Greymane"
   },
