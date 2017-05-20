@@ -5,7 +5,7 @@ export interface ITalent {
     name: string;
     description: string;
     icon: string;
-    // prerequisite?: string;
+    prerequisite?: string;
 }
 
 export interface IHero {
