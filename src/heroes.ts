@@ -61,6 +61,10 @@ export default [
     "name": "Diablo"
   },
   {
+    "id": "DVa",
+    "name": "D.Va"
+  },
+  {
     "id": "L90ETC",
     "name": "E.T.C."
   },
