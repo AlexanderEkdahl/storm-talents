@@ -46,6 +46,10 @@ const validator = jsen({
                         "name": {
                             "id": "/properties/talents/items/items/properties/name",
                             "type": "string"
+                        },
+                        "prerequisite": {
+                            "id": "/properties/talents/items/items/properties/prerequisite",
+                            "type": "string"
                         }
                     },
                     "required": [
@@ -126,7 +130,7 @@ documents.forEach((document) => {
         }
 
         if (!hero.name) {
-            hero.name = strings[`Unit/Name/${getValue(node, "Unit", `Hero${hero.id}`)}`];
+            hero.name = strings[`Unit/Name/${getValue(node, "Unit") || `Hero${hero.id}`}`];
         }
 
         hero.title = strings[`Hero/Title/${hero.id}`];
@@ -148,11 +152,17 @@ documents.forEach((document) => {
 
                 const tier = attributeValue(talentNode, "Tier");
                 const column = attributeValue(talentNode, "Column");
-
-                hero.talents[tier].push({
+                const talent = {
                     id: talentId,
                     column: column,
-                });
+                };
+                const prerequisite = getValue(talentNode, "PrerequisiteTalentArray");
+
+                if (prerequisite) {
+                    talent.prerequisite = prerequisite;
+                }
+
+                hero.talents[tier].push(talent);
             });
     });
 
@@ -200,20 +210,24 @@ const output = Object.keys(heroes).map((id) => {
         title: heroes[id].title,
         search: heroes[id].search,
         talents: TIERS.map((tier) => {
-            return heroes[id].talents[tier].map((talent) => {
-                let talentDescription;
-                if (icons[talents[talent.id].face].textPath) {
-                    talentDescription = strings[icons[talents[talent.id].face].textPath];
-                } else {
-                    talentDescription = strings[`Button/SimpleDisplayText/${talents[talent.id].face}`];
+            return heroes[id].talents[tier].map((talentTier) => {
+                const talent = {
+                    id: talentTier.id,
+                    name: talents[talentTier.id].name,
+                    icon: icons[talents[talentTier.id].face].icon,
                 }
 
-                return {
-                    id: talent.id,
-                    name: talents[talent.id].name,
-                    description: talentDescription,
-                    icon: icons[talents[talent.id].face].icon,
-                };
+                if (icons[talents[talentTier.id].face].textPath) {
+                    talent.description = strings[icons[talents[talentTier.id].face].textPath];
+                } else {
+                    talent.description = strings[`Button/SimpleDisplayText/${talents[talentTier.id].face}`];
+                }
+
+                if (talentTier.prerequisite) {
+                    talent.prerequisite = talentTier.prerequisite;
+                }
+
+                return talent;
             })
         })
     };
@@ -254,24 +268,28 @@ images.forEach((image) => {
     spawn('convert', [fromPath, '-quality', '85%', destPath]);
 });
 
-function getValue(node, subnodeName, defaultValue = undefined) {
-    if (!node)
-        return defaultValue;
+function getValue(node, subnodeName) {
+    if (!node) {
+        return;
+    }
 
     var subnode = node.get(subnodeName);
-    if (!subnode)
-        return defaultValue;
+    if (!subnode) {
+        return;
+    }
 
-    return attributeValue(subnode, "value", defaultValue);
+    return attributeValue(subnode, "value");
 }
 
-function attributeValue(node, attrName, defaultValue = undefined) {
-    if (!node)
-        return defaultValue;
+function attributeValue(node, attrName) {
+    if (!node) {
+        return;
+    }
 
     var attr = node.attr(attrName);
-    if (!attr)
-        return defaultValue;
+    if (!attr) {
+        return;
+    }
 
     return attr.value();
 }

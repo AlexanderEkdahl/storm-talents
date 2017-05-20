@@ -3,20 +3,23 @@ provider "aws" {
 }
 
 data "aws_iam_policy_document" "main" {
-    statement {
-        sid = "AddPerm"
-        effect = "Allow"
-        principals {
-            type = "AWS"
-            identifiers = ["*"]
-        }
-        actions = [
-            "s3:GetObject"
-        ]
-        resources = [
-            "arn:aws:s3:::storm-talents/*",
-        ]
+  statement {
+    sid    = "AddPerm"
+    effect = "Allow"
+
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
     }
+
+    actions = [
+      "s3:GetObject",
+    ]
+
+    resources = [
+      "arn:aws:s3:::storm-talents/*",
+    ]
+  }
 }
 
 resource "aws_s3_bucket" "primary" {
