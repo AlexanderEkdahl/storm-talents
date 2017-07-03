@@ -10,11 +10,8 @@
             "es6"
         ],
         "skipLibCheck": true,
-        "strictNullChecks": true,
         "importHelpers": true,
-        "noImplicitAny": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true
+        "strict": true
     },
     "include": [
         "src/**/*"

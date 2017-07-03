@@ -33,12 +33,12 @@ export default class Tree extends Component<ITreeProps, ITreeState> {
 
         const row = TIERS.map((_, i) =>
             TalentRow({
-                onMouseEnter: this.onMouseEnter,
-                onMouseLeave: this.onMouseLeave,
                 height,
                 i,
                 iconSize,
                 onClick,
+                onMouseEnter: this.onMouseEnter,
+                onMouseLeave: this.onMouseLeave,
                 scaleX,
                 scaleY,
                 selections: selections[i],
