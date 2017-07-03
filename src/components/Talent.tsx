@@ -55,20 +55,10 @@ export default class Talent extends Component<ITalentProps, {}> {
                             </feMerge>
                         </filter>
                     </defs>
-                    <text
-                        style={{ ...baseStyle, filter: "url(#shadow)" }}
-                        x={x + iconSize / 2}
-                        y={y + iconSize / 2}
-                        dy=".32em"
-                    >
+                    <text style={{ ...baseStyle, filter: "url(#shadow)" }} x={x + iconSize / 2} y={y + iconSize / 2} dy=".32em">
                         {j + 1}
                     </text>
-                    <text
-                        style={{ ...baseStyle, fill: "white" }}
-                        x={x + iconSize / 2}
-                        y={y + iconSize / 2}
-                        dy=".32em"
-                    >
+                    <text style={{ ...baseStyle, fill: "white" }} x={x + iconSize / 2} y={y + iconSize / 2} dy=".32em">
                         {j + 1}
                     </text>
                 </g>
@@ -78,13 +68,7 @@ export default class Talent extends Component<ITalentProps, {}> {
         return (
             <g onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick} style={{ cursor: "pointer" }}>
                 {glow}
-                <image
-                    xlinkHref={`/icons/${talent.icon}.jpg`}
-                    x={x}
-                    y={y}
-                    height={iconSize}
-                    width={iconSize}
-                />
+                <image xlinkHref={`/icons/${talent.icon}.jpg`} x={x} y={y} height={iconSize} width={iconSize} />
                 {sign}
             </g>
         );

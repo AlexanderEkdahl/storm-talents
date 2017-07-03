@@ -15,7 +15,9 @@ export default (props: ITooltipProps) => {
 
     return (
         <g transform={`translate(${scaleX(i) + iconSize / 2},${scaleY(i, j)})`}>
-            <text dy={-5} style={{ fill: "white", textAnchor: "middle" }}>{talent.name}</text>
+            <text dy={-5} style={{ fill: "white", textAnchor: "middle" }}>
+                {talent.name}
+            </text>
         </g>
     );
 };

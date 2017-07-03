@@ -67,12 +67,14 @@ export default class Application extends Component<{}, IApplicationState> {
     }
 
     private onResize = () => {
-        if (this.rqf) { return; }
+        if (this.rqf) {
+            return;
+        }
         this.rqf = window.requestAnimationFrame(() => {
             this.rqf = null;
             this.forceUpdate();
         });
-    }
+    };
 
     private selectTalent = (i: number, j: number) => {
         if (i < 0 || i >= TIERS.length || j < 0 || j >= this.state.hero!.talents[i].length) {
@@ -86,21 +88,21 @@ export default class Application extends Component<{}, IApplicationState> {
             lastSelectTier: i,
             talentSelections: newTalentSelections,
         });
-    }
+    };
 
     private onHeroSelected = (heroId: string) => {
-        getHero(heroId).then((hero) => {
+        getHero(heroId).then(hero => {
             this.setState({
                 hero,
                 lastSelectTier: -1,
                 talentSelections: initialTalentSelections,
             });
         });
-    }
+    };
 
     private onKeyPress = (event: KeyboardEvent) => {
         if (event.keyCode >= 49 && event.keyCode <= 53) {
             this.selectTalent(this.state.lastSelectTier + 1, event.keyCode - 49);
         }
-    }
+    };
 }

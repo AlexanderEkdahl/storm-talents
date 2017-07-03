@@ -18,10 +18,9 @@ export interface ITalentRowProps {
 }
 
 export default (props: ITalentRowProps) => {
-    const { i, scaleX, scaleY, iconSize, onClick, selections, talents,
-        height, tierOffset, onMouseEnter, onMouseLeave } = props;
+    const { i, scaleX, scaleY, iconSize, onClick, selections, talents, height, tierOffset, onMouseEnter, onMouseLeave } = props;
 
-    const row = talents.map((talent, j) => (
+    const row = talents.map((talent, j) =>
         <Talent
             x={scaleX(i)}
             y={scaleY(i, j)}
@@ -32,18 +31,13 @@ export default (props: ITalentRowProps) => {
             selected={selections === j}
             j={j}
             talent={talent}
-        />
-    ));
+        />,
+    );
 
     return (
         <g>
             {row}
-            <text
-                style={{ textAnchor: "middle", fontSize: 28, fill: "white" }}
-                x={scaleX(i) + iconSize / 2}
-                y={height - 25}
-                dy=".32em"
-            >
+            <text style={{ textAnchor: "middle", fontSize: 28, fill: "white" }} x={scaleX(i) + iconSize / 2} y={height - 25} dy=".32em">
                 {i === 0 ? 1 : TIERS[i] + tierOffset}
             </text>
         </g>
