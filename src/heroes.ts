@@ -149,6 +149,10 @@ export default [
     "name": "Malfurion"
   },
   {
+    "id": "Malthael",
+    "name": "Malthael"
+  },
+  {
     "id": "Medivh",
     "name": "Medivh"
   },
