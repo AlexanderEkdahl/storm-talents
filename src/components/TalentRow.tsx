@@ -25,8 +25,8 @@ export default (props: ITalentRowProps) => {
             x={scaleX(i)}
             y={scaleY(i, j)}
             iconSize={iconSize}
-            onClick={() => onClick(i, j)}
-            onMouseEnter={() => onMouseEnter(i, j)}
+            onClick={() => onClick(i, j)} // tslint:disable-line
+            onMouseEnter={() => onMouseEnter(i, j)} // tslint:disable-line
             onMouseLeave={onMouseLeave}
             selected={selections === j}
             j={j}

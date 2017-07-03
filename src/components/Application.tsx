@@ -90,13 +90,13 @@ export default class Application extends Component<{}, IApplicationState> {
         });
     };
 
-    private onHeroSelected = (heroId: string) => {
-        getHero(heroId).then(hero => {
-            this.setState({
-                hero,
-                lastSelectTier: -1,
-                talentSelections: initialTalentSelections,
-            });
+    private onHeroSelected = async (heroId: string) => {
+        const hero = await getHero(heroId);
+
+        this.setState({
+            hero,
+            lastSelectTier: -1,
+            talentSelections: initialTalentSelections,
         });
     };
 

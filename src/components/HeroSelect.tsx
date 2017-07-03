@@ -17,7 +17,10 @@ export default (props: IHeroSelectProps) => {
     const { selected, heroes, onSelection, height } = props;
     return (
         <div style={{ height }}>
-            <select onChange={e => onSelection((e.target as HTMLSelectElement).value)} style={selectStyle}>
+            <select
+                onChange={e => onSelection((e.target as HTMLSelectElement).value)} // tslint:disable-line
+                style={selectStyle}
+            >
                 {heroes.map(option(selected))}
             </select>
         </div>
