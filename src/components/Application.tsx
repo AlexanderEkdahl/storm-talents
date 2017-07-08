@@ -1,9 +1,9 @@
 import { Component, h } from "preact";
-import { fetchJson } from "../fetch-json";
-import heroes from "../heroes";
-import { IHero, TIERS } from "../interfaces";
-import HeroSelect from "./HeroSelect";
-import Tree from "./Tree";
+import { fetchJson } from "../fetch-json.js";
+import heroes from "../heroes.js";
+import { IHero, TIERS } from "../interfaces.js";
+import HeroSelect from "./HeroSelect.js";
+import Tree from "./Tree.js";
 
 export interface IApplicationState {
     talentSelections: number[];
@@ -13,9 +13,8 @@ export interface IApplicationState {
 
 const initialTalentSelections = TIERS.map(() => -1);
 
-const getHero = async (heroId: string): Promise<IHero> => {
-    return await fetchJson(`/heroes/${heroId}.json`);
-};
+const getHero = (heroId: string): Promise<IHero> =>
+    fetchJson(`heroes/${heroId}.json`);
 
 export default class Application extends Component<{}, IApplicationState> {
     public state: IApplicationState = {

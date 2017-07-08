@@ -1,5 +1,5 @@
 import { h } from "preact";
-import { ITalent } from "../interfaces";
+import { ITalent } from "../interfaces.js";
 
 export interface ITooltipProps {
     i: number;

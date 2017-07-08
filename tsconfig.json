@@ -5,15 +5,9 @@
         "moduleResolution": "node",
         "jsx": "react",
         "jsxFactory": "h",
-        "lib": [
-            "dom",
-            "es6"
-        ],
+        "lib": ["dom", "es6"],
         "skipLibCheck": true,
-        "importHelpers": true,
         "strict": true
     },
-    "include": [
-        "src/**/*"
-    ]
+    "include": ["src/**/*"]
 }

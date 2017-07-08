@@ -1,7 +1,6 @@
 import { h } from "preact";
-import { ITalent } from "../interfaces";
-import { TIERS } from "../interfaces";
-import Talent from "./Talent";
+import { ITalent, TIERS } from "../interfaces.js";
+import Talent from "./Talent.js";
 
 export interface ITalentRowProps {
     i: number;

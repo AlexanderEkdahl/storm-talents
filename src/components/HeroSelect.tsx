@@ -1,5 +1,5 @@
 import { h } from "preact";
-import { IHero } from "../interfaces";
+import { IHero } from "../interfaces.js";
 
 export interface IHeroSelectProps {
     selected: string;

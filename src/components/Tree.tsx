@@ -1,8 +1,8 @@
 import { Component, h } from "preact";
-import { ITalent, TIERS } from "../interfaces";
-import Paths from "./Paths";
-import TalentRow from "./TalentRow";
-import Tooltip from "./Tooltip";
+import { ITalent, TIERS } from "../interfaces.js";
+import Paths from "./Paths.js";
+import TalentRow from "./TalentRow.js";
+import Tooltip from "./Tooltip.js";
 
 export interface ITreeProps {
     talents: ITalent[][];

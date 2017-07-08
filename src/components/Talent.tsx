@@ -1,5 +1,5 @@
 import { Component, h } from "preact";
-import { ITalent } from "../interfaces";
+import { ITalent } from "../interfaces.js";
 
 export interface ITalentProps {
     y: number;
@@ -68,7 +68,7 @@ export default class Talent extends Component<ITalentProps, {}> {
         return (
             <g onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick} style={{ cursor: "pointer" }}>
                 {glow}
-                <image xlinkHref={`/icons/${talent.icon}.jpg`} x={x} y={y} height={iconSize} width={iconSize} />
+                <image xlinkHref={`icons/${talent.icon}.jpg`} x={x} y={y} height={iconSize} width={iconSize} />
                 {sign}
             </g>
         );
